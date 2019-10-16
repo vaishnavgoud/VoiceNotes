@@ -72,6 +72,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
+app.use(express.static('../voice-recognition-app/build'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('../voice-recognition-app/build/index.html'));
+});
+
 // this is our get method
 // this method fetches all available data in our database
 router.get('/getData', checkJwt, (req, res) => {

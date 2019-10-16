@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd backend && node server.js\" \"cd voice-recognition-app && npm start\""
+    "start": "cd voice-recognition-app && npm run build && cd ../backend && node server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "concurrently": "^4.1.2"
-  }
+  "license": "MIT"
 }
