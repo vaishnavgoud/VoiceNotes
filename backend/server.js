@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
 
 // this is our get method
 // this method fetches all available data in our database
-router.get('/getData', checkJwt, (req, res) => {
+router.get('/getData', (req, res) => {
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true, data: data });
@@ -89,7 +89,7 @@ router.get('/getData', checkJwt, (req, res) => {
 
 // this is our update method
 // this method overwrites existing data in our database
-router.post('/updateData', checkJwt, (req, res) => {
+router.post('/updateData', (req, res) => {
   const { id, update } = req.body;
   Data.findByIdAndUpdate(id, update, (err) => {
     if (err) return res.json({ success: false, error: err });
@@ -99,7 +99,7 @@ router.post('/updateData', checkJwt, (req, res) => {
 
 // this is our delete method
 // this method removes existing data in our database
-router.delete('/deleteData', checkJwt, (req, res) => {
+router.delete('/deleteData', (req, res) => {
   const { id } = req.body;
   Data.findByIdAndRemove(id, (err) => {
     if (err) return res.send(err);
@@ -109,7 +109,7 @@ router.delete('/deleteData', checkJwt, (req, res) => {
 
 // this is our create methid
 // this method adds new data in our database
-router.post('/putData', checkJwt, (req, res) => {
+router.post('/putData', (req, res) => {
   let data = new Data();
 
   const { id, message } = req.body;
