@@ -1,0 +1,63 @@
+body {
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.App {
+  &__button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #456990;
+    border: 3px solid #456990;
+    border-radius: 5px;
+    margin: 5px 0;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 0;
+    cursor: pointer;
+
+    &:active {
+      background-color: #f45b69;
+    }
+    &:focus {
+      outline: none;
+      border: 3px solid #f45b69;
+    }
+  }
+
+  &__auto-typing {
+    min-height: 150px;
+    background-color: #114b5f;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.2rem;
+    font-family: Helvetica;
+    letter-spacing: 2px;
+  }
+  &__notes {
+    background-color: #114b5f;
+    min-height: 150px;
+    padding: 16px;
+    font-weight: bold;
+
+    &_content {
+      display: flex;
+      justify-content: space-between;
+      font-family: fantasy;
+      font-size: 18px;
+      color: white;
+
+      &_button {
+        color: #100f0f;
+        padding: 2px;
+        margin: 2px;
+        cursor: pointer;
+        max-height: 25px;
+      }
+    }
+  }
+}
+
+@import "./components/Navbar.scss";
