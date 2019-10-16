@@ -14,8 +14,8 @@ const VoiceNotes = () => {
       if(user){
           fetch('/api/getData')
             .then((data) => data.json())
-            .then((res) => {return res.data});
-            console.log(res.data);
+            .then((res) => {console.log(res.data); return res.data;});
+            
       }
       else {
         var notes = [];
